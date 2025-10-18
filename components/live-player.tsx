@@ -1,8 +1,13 @@
 'use client'
 import { useState } from 'react'
 
-export default function LivePlayer({ href }: { href: string }) {
+interface LivePlayerProps {
+  href: string
+}
+
+export default function LivePlayer({ href }: LivePlayerProps) {
   const [visible, setVisible] = useState(false)
+
   return (
     <div className="w-full">
       {!visible && (
@@ -14,7 +19,7 @@ export default function LivePlayer({ href }: { href: string }) {
             ▶ Watch Here
           </button>
           <a
-            href={href}
+            href="https://www.facebook.com/share/1BJyhjBtP1/?mibextid=wwXIfr"
             target="_blank"
             rel="noreferrer"
             className="rounded-lg border-2 border-gold-400 px-4 py-2 text-sm font-semibold text-primary-900 hover:bg-gold-50 transition-colors"

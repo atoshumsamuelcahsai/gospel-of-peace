@@ -136,7 +136,7 @@ export default function HomePage() {
               </div>
               <div className="max-w-5xl mx-auto">
                 <div className="rounded-2xl overflow-hidden shadow-xl bg-white/90 backdrop-blur-sm" style={{border: '4px solid rgba(0, 78, 78, 0.3)'}}>
-                  <LivePlayer href="https://www.facebook.com/your-page/live" />
+                  <LivePlayer href="https://www.facebook.com/share/1BJyhjBtP1/?mibextid=wwXIfr" />
                 </div>
               </div>
             </Container>
