@@ -35,7 +35,7 @@ export default function HomePage() {
           '@context': 'https://schema.org',
           '@type': 'Church',
           name: 'Gospel of Peace',
-          url: 'https://www.example.org/',
+          url: 'https://www.gospelofpeaceglasgow.org.uk/',
           address: {
             '@type': 'PostalAddress',
             streetAddress: address.line1,
@@ -62,7 +62,7 @@ export default function HomePage() {
           <Container>
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 text-primary-900 border border-neutral-200 mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 text-primary-900 mb-6" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
                   <span className="h-2 w-2 rounded-full bg-accent-500" aria-hidden />
                   <span className="text-xs font-semibold tracking-wide">Sundays · 11:00 AM</span>
                 </div>
@@ -135,7 +135,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="max-w-5xl mx-auto">
-                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-neutral-200 bg-white/90 backdrop-blur-sm">
+                <div className="rounded-2xl overflow-hidden shadow-xl bg-white/90 backdrop-blur-sm" style={{border: '4px solid rgba(0, 78, 78, 0.3)'}}>
                   <LivePlayer href="https://www.facebook.com/your-page/live" />
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function HomePage() {
                     href={item.href}
                     className="group modern-card p-8 hover:shadow-xl transition-shadow no-underline"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-gold-100 to-gold-200 rounded-lg flex items-center justify-center mb-6 text-3xl shadow-md">
+                    <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-3xl shadow-md" style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}>
                       {item.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-primary-900 mb-2 group-hover:text-primary-700 transition-colors">
@@ -197,12 +197,13 @@ export default function HomePage() {
                   to welcome you into our community.
                 </p>
                 <div className="grid md:grid-cols-2 gap-6 text-left">
-                  <div className="p-6 rounded-xl bg-white/70 border border-neutral-200">
+                  <div className="p-6 rounded-xl bg-white/70" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
                     <h3 className="text-2xl font-bold mb-3 text-primary-900">Visit Us</h3>
                     <p className="text-neutral-700 mb-1">{address.line1}</p>
                     <p className="text-neutral-700 mb-4">{address.city}</p>
                     <a
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-gold-500 text-primary-900 rounded-lg font-semibold no-underline hover:bg-gold-400 transition-all"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg font-semibold no-underline transition-all hover:opacity-90"
+                      style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
                       target="_blank"
                       rel="noopener noreferrer"
                       href={address.mapsUrl}
@@ -210,13 +211,14 @@ export default function HomePage() {
                       Get Directions
                     </a>
                   </div>
-                  <div className="p-6 rounded-xl bg-white/70 border border-neutral-200">
+                  <div className="p-6 rounded-xl bg-white/70" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
                     <h3 className="text-2xl font-bold mb-3 text-primary-900">Connect Online</h3>
                     <p className="text-neutral-700 mb-4">
                       Join our online community and stay updated with everything happening at Gospel of Peace.
                     </p>
                     <Link
-                      className="inline-flex items-center gap-2 px-6 py-3 border-2 border-accent-500 text-accent-700 rounded-lg font-semibold no-underline hover:bg-accent-50 transition-all"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg font-semibold no-underline transition-all hover:opacity-90"
+                      style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
                       href="/contact"
                     >
                       Contact Us

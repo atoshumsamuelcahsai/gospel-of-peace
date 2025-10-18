@@ -1,16 +1,32 @@
 import Container from './container'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="border-t-2 border-gold-400 mt-0 bg-black w-full">
+    <footer className="mt-0 w-full" style={{backgroundColor: 'rgba(0, 78, 78, 0.95)', borderTop: '2px solid rgba(0, 78, 78, 0.95)'}}>
       <Container>
-        <div className="py-12 bg-black">
+        <div className="py-12" style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}>
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Logo Section - Background Cover */}
+            <div 
+              className="md:col-span-1 relative rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px]"
+              style={{
+                backgroundImage: 'url(/hero/logochurch_transparent.png)',
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center'
+              }}
+            >
+            </div>
+            
             {/* About Section */}
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Gospel of Peace</h3>
+            <div className="md:col-span-1">
+              <h3 className="text-white font-bold text-lg mb-4">
+                <div>GOSPEL OF PEACE</div>
+                <div className="text-sm font-medium">CHURCH GLASGOW</div>
+              </h3>
               <p className="text-white text-sm leading-relaxed">
                 A welcoming community of faith in Glasgow, dedicated to worship, fellowship, and serving our community.
               </p>
@@ -60,12 +76,20 @@ export default function Footer() {
                   </svg>
                   <span>Sundays at 11:00 AM</span>
                 </p>
+                <p className="flex items-start gap-2">
+                  <svg className="w-5 h-5 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href="mailto:info@gospelofpeaceglasgow.org.uk" className="text-white hover:text-gold-300 transition-colors">
+                    info@gospelofpeaceglasgow.org.uk
+                  </a>
+                </p>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-top border-primary-700 pt-6">
+          <div className="pt-6" style={{borderTop: '1px solid rgba(0, 78, 78, 0.3)'}}>
             <p className="text-white text-sm text-center">
               © {new Date().getFullYear()} Gospel of Peace Church. All rights reserved.
             </p>
