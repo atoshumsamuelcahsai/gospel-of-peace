@@ -2,7 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
+:root { 
+  color-scheme: light;
+  --gradient-primary: linear-gradient(135deg, #1e3a5f 0%, #243b53 100%);
+  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #c19b2f 100%);
+  --gradient-accent: linear-gradient(135deg, #334e68 0%, #486581 100%);
+}
 
-:root { color-scheme: light; }
-body { @apply bg-white text-slate-800; }
-a { @apply underline-offset-2; }
+body { 
+  background: linear-gradient(to bottom right, #fdfcfb, #ffffff, #faf8f5);
+  color: #1f2933;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Modern smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #faf8f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d4af37;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c19b2f;
+}
+
+/* Modern link styles */
+a { 
+  @apply underline-offset-2 transition-all duration-300;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #1e3a5f, #d4af37, #1e3a5f);
+}
+
+/* Modern card hover effect */
+.modern-card {
+  transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+  transform: scale(1.05) translateY(-0.25rem);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
