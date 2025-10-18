@@ -11,10 +11,11 @@ export default function LivePlayer({ href }: LivePlayerProps) {
   return (
     <div className="w-full">
       {!visible && (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center gap-3" style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}>
           <button
             onClick={() => setVisible(true)}
-            className="rounded-lg border border-primary-800/20 px-4 py-2 text-sm font-medium text-primary-900 hover:bg-cream-100 transition-colors"
+            className="rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-colors"
+            style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
           >
             ▶ Watch Here
           </button>
@@ -22,7 +23,8 @@ export default function LivePlayer({ href }: LivePlayerProps) {
             href="https://www.facebook.com/share/1BJyhjBtP1/?mibextid=wwXIfr"
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border-2 border-gold-400 px-4 py-2 text-sm font-semibold text-primary-900 hover:bg-gold-50 transition-colors"
+            className="rounded-lg border-2 border-white/20 px-4 py-2 text-sm font-semibold text-white hover:opacity-90 transition-colors"
+            style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
           >
             Open on Facebook
           </a>
