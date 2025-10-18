@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -5,64 +6,80 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Professional Navy Blue + Warm Gold palette
+        // Option A — Light & Grace
         primary: {
-          50: '#f0f4f8',
-          100: '#d9e2ec',
-          200: '#bcccdc',
-          300: '#9fb3c8',
-          400: '#829ab1',
-          500: '#627d98',
-          600: '#486581',
-          700: '#334e68',
-          800: '#243b53',
-          900: '#1e3a5f', // Deep navy
-        },
-        gold: {
-          50: '#fdfbf7',
-          100: '#faf6ed',
-          200: '#f4ead5',
-          300: '#ebdbb0',
-          400: '#e0c888',
-          500: '#d4af37', // Rich gold
-          600: '#c19b2f',
-          700: '#a68228',
-          800: '#8a6b21',
-          900: '#6e551a',
+          50:  '#f5f8ff',
+          100: '#e6edff',
+          200: '#cbd9ff',
+          300: '#9ebafc',
+          400: '#6d94f4',
+          500: '#416fe3',
+          600: '#2c54b7',
+          700: '#1d3f8e',
+          800: '#172f6b',
+          900: '#0f1d40',
         },
         accent: {
-          50: '#f5f7fa',
-          100: '#e4e7eb',
-          200: '#cbd2d9',
-          300: '#9aa5b1',
-          400: '#7b8794',
-          500: '#616e7c',
-          600: '#52606d',
-          700: '#3e4c59',
-          800: '#323f4b',
-          900: '#1f2933',
+          50:  '#e6fafa',
+          100: '#b3f0ef',
+          200: '#80e5e3',
+          300: '#4ddad7',
+          400: '#26ceca',
+          500: '#00a8a8',
+          600: '#008c8c',
+          700: '#006f6f',
+          800: '#005252',
+          900: '#003636',
         },
-        // Warm neutrals for backgrounds
+        gold: {
+          50:  '#fffaf0',
+          100: '#fff3d6',
+          200: '#ffe6a8',
+          300: '#ffd777',
+          400: '#f4c542',
+          500: '#eab308',
+        },
+        neutral: {
+          50:  '#ffffff',
+          100: '#f9fafb',
+          200: '#f3f4f6',
+          300: '#e5e7eb',
+          400: '#d1d5db',
+          500: '#9ca3af',
+          600: '#6b7280',
+          700: '#4b5563',
+          800: '#374151',
+          900: '#1f2937',
+        },
         cream: {
-          50: '#fdfcfb',
-          100: '#faf8f5',
-          200: '#f5f1ea',
-          300: '#ebe4d8',
-          400: '#ddd3c1',
-          500: '#c9bca8',
-          600: '#b3a393',
-          700: '#8f8171',
-          800: '#6e6559',
-          900: '#4d4741',
+          50: '#fffdf9',
+          100:'#faf8f2',
+          200:'#f5f2ea',
+          300:'#eeeae0',
+          400:'#e6e1d6',
+          500:'#dcd6c7',
         },
       },
       fontFamily: {
-        'serif': ['Georgia', 'serif'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
+      spacing: { '18':'4.5rem', '88':'22rem' },
+      boxShadow: {
+        soft: '0 4px 20px rgba(0,0,0,0.06)',
+        gold: '0 4px 14px rgba(234,179,8,0.30)',
+      },
+      // Background helpers (names used in globals.css as well)
+      backgroundImage: {
+        // subtle “paper” grain + micro grid
+        'paper':
+          'radial-gradient(1000px 600px at 20% -10%, rgba(65,111,227,0.06), transparent 60%), radial-gradient(800px 500px at 100% 0%, rgba(14,165,233,0.06), transparent 60%), linear-gradient(to right, rgba(0,0,0,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)',
+        // soft hero “beams” (modern take on lcmc’s gentle light areas)
+        'beams':
+          'conic-gradient(from 120deg at 50% -10%, rgba(65,111,227,0.18), transparent 40%), conic-gradient(from 250deg at 0% 20%, rgba(14,165,233,0.16), transparent 35%), radial-gradient(1200px 500px at 75% -10%, rgba(255,255,255,0.7), transparent 60%)',
+      },
+      backgroundSize: {
+        grid: '24px 24px',
       },
     },
   },
