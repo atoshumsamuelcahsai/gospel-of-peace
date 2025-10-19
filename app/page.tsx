@@ -79,7 +79,7 @@ export default async function HomePage() {
                   {(homePageData.heroSection?.ctaButtons || [
                     { title: 'Discover Our Story', url: '/aboutus', style: 'primary' },
                     { title: 'Plan Your Visit', url: '/contact', style: 'secondary' },
-                  ]).map((button, index) => (
+                  ]).map((button: any, index: number) => (
                     <Link 
                       key={index}
                       href={button.url} 
@@ -105,7 +105,7 @@ export default async function HomePage() {
           <section className="py-16 bg-white/80">
             <Container>
               <ul className="grid grid-cols-2 md:grid-cols-4 gap-8" role="list">
-                {homePageData.statsSection.stats.map((stat, i) => (
+                {homePageData.statsSection.stats.map((stat: any, i: number) => (
                   <li key={i} className="text-center modern-card p-6">
                     <div className="text-4xl mb-3" aria-hidden>
                       {stat.icon}
@@ -158,7 +158,7 @@ export default async function HomePage() {
                   { url: '/events', title: 'Events', description: 'Community gatherings', icon: '🙌' },
                   { url: '/teams', title: 'Our Team', description: 'Meet our leaders', icon: '👥' },
                   { url: '/contact', title: 'Connect', description: 'Get in touch', icon: '💬' },
-                ]).map((item, i) => (
+                ]).map((item: any, i: number) => (
                   <Link
                     key={i}
                     href={item.url}
