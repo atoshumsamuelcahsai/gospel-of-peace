@@ -155,7 +155,7 @@ export default async function HomePage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {(homePageData.quickLinksSection?.links || [
                   { url: '/sermon', title: 'Sermons', description: 'Inspiring messages', icon: '📖' },
-                  { url: '/events', title: 'Events', description: 'Community gatherings', icon: '🙌' },
+                  { url: '/events', title: 'Events', description: 'Community gatherings', icon: '✨' },
                   { url: '/teams', title: 'Our Team', description: 'Meet our leaders', icon: '👥' },
                   { url: '/contact', title: 'Connect', description: 'Get in touch', icon: '💬' },
                 ]).map((item: any, i: number) => (
