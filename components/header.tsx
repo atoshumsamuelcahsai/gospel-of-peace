@@ -5,7 +5,29 @@ import Image from 'next/image'
 import Container from './container'
 import { useState } from 'react'
 
-export default function Header() {
+interface HeaderLink {
+  title: string
+  url: string
+  isButton?: boolean
+}
+
+interface HeaderData {
+  churchName: {
+    main: string
+    subtitle: string
+  }
+  logo: {
+    path: string
+    alt: string
+  }
+  navigationLinks: HeaderLink[]
+}
+
+interface HeaderProps {
+  data: HeaderData
+}
+
+export default function Header({ data }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -14,10 +36,10 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Professional Logo */}
           <Link href="/" className="group flex items-center gap-3 no-underline">
-            <div className="w-40 h-40 rounded-md flex items-center justify-center shadow-sm overflow-hidden" style={{backgroundColor: 'rgba(255, 255, 255, 1)'}}>
+            <div className="w-40 h-40 flex items-center justify-center shadow-sm overflow-hidden" style={{backgroundColor: 'rgba(255, 253, 250, 0.95)'}}>
               <Image
-                src="/hero/logochurch.png"
-                alt="Gospel of Peace Logo"
+                src={data.logo.path}
+                alt={data.logo.alt}
                 width={350}
                 height={350}
                 className="object-contain"
@@ -25,28 +47,33 @@ export default function Header() {
               />
             </div>
             <span className="text-primary-900 group-hover:text-primary-800 transition-colors">
-              <div className="font-bold text-lg">GOSPEL OF PEACE</div>
-              <div className="font-medium text-xs text-center">CHURCH GLASGOW</div>
+              <div className="font-bold text-lg">{data.churchName.main}</div>
+              <div className="font-medium text-xs text-center">{data.churchName.subtitle}</div>
             </span>
           </Link>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/sermon" className="relative text-primary-900 hover:text-gold-600 font-medium no-underline">
-              <span>Sermons</span>
-            </Link>
-            <Link href="/events" className="relative text-primary-900 hover:text-gold-600 font-medium no-underline">
-              <span>Events</span>
-            </Link>
-            <Link href="/teams" className="relative text-primary-900 hover:text-gold-600 font-medium no-underline">
-              <span>Team</span>
-            </Link>
-            <Link href="/aboutus" className="relative text-primary-900 hover:text-gold-600 font-medium no-underline">
-              <span>About</span>
-            </Link>
-            <Link href="/contact" className="px-6 py-2.5 text-white rounded-lg font-semibold no-underline transition-colors hover:opacity-90" style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}>
-              Connect
-            </Link>
+            {data.navigationLinks.map((link, index) => (
+              link.title === 'Connect' || link.isButton ? (
+                <Link 
+                  key={index}
+                  href={link.url} 
+                  className="px-6 py-2.5 text-white rounded-lg font-semibold no-underline transition-colors hover:opacity-90" 
+                  style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
+                >
+                  {link.title}
+                </Link>
+              ) : (
+                <Link 
+                  key={index}
+                  href={link.url} 
+                  className="relative text-primary-900 hover:text-gold-600 font-medium no-underline"
+                >
+                  <span>{link.title}</span>
+                </Link>
+              )
+            ))}
           </nav>
           
           {/* Mobile menu button */}
@@ -72,42 +99,28 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 animate-fadeIn" style={{borderTop: '1px solid rgba(0, 78, 78, 0.3)'}}>
             <nav className="flex flex-col gap-4">
-              <Link 
-                href="/sermon" 
-                className="text-primary-800 hover:text-gold-600 font-medium no-underline py-2 px-4 rounded-lg hover:bg-gold-50 transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Sermons
-              </Link>
-              <Link 
-                href="/events" 
-                className="text-primary-800 hover:text-gold-600 font-medium no-underline py-2 px-4 rounded-lg hover:bg-gold-50 transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Events
-              </Link>
-              <Link 
-                href="/teams" 
-                className="text-primary-800 hover:text-gold-600 font-medium no-underline py-2 px-4 rounded-lg hover:bg-gold-50 transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Team
-              </Link>
-              <Link 
-                href="/aboutus" 
-                className="text-primary-800 hover:text-gold-600 font-medium no-underline py-2 px-4 rounded-lg hover:bg-gold-50 transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About Us
-              </Link>
-              <Link 
-                href="/contact" 
-                className="text-center px-6 py-3 text-white rounded-lg font-semibold no-underline hover:shadow-lg transform hover:scale-105 transition-all duration-300 hover:opacity-90"
-                style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Connect
-              </Link>
+              {data.navigationLinks.map((link, index) => (
+                link.isButton ? (
+                  <Link 
+                    key={index}
+                    href={link.url} 
+                    className="text-center px-6 py-3 text-white rounded-lg font-semibold no-underline hover:shadow-lg transform hover:scale-105 transition-all duration-300 hover:opacity-90"
+                    style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.title}
+                  </Link>
+                ) : (
+                  <Link 
+                    key={index}
+                    href={link.url} 
+                    className="text-primary-800 hover:text-gold-600 font-medium no-underline py-2 px-4 rounded-lg hover:bg-gold-50 transition-all duration-300"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.title}
+                  </Link>
+                )
+              ))}
             </nav>
           </div>
         )}

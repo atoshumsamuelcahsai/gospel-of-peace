@@ -1,12 +1,23 @@
 import Container from '@/components/container'
+import PortableTextRenderer from '@/components/portable-text-renderer'
+import { getAboutUsContent } from '@/lib/sanity'
 
-export default function AboutUsPage() {
+export const revalidate = 60
+
+export default async function AboutUsPage() {
+  const aboutUsData = await getAboutUsContent('en')
+
   return (
     <Container>
       <div className="py-10">
-        <h1 className="text-2xl font-bold">Who Are We</h1>
-        <div className="mt-6">
-          <p className="text-slate-600">Learn more about our church community and mission!</p>
+        <h1 className="text-4xl font-bold text-primary-900 mb-8 text-center">
+          {aboutUsData.title}
+        </h1>
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <PortableTextRenderer content={aboutUsData.content} />
+          </div>
         </div>
       </div>
     </Container>

@@ -1,12 +1,23 @@
 import Container from '@/components/container'
+import PortableTextRenderer from '@/components/portable-text-renderer'
+import { getSermonContent } from '@/lib/sanity'
 
-export default function SermonPage() {
+export const revalidate = 60
+
+export default async function SermonPage() {
+  const sermonData = await getSermonContent('en')
+
   return (
     <Container>
       <div className="py-10">
-        <h1 className="text-2xl font-bold">Sermons</h1>
-        <div className="mt-6">
-          <p className="text-slate-600">Check back soon for sermon recordings and transcripts!</p>
+        <h1 className="text-4xl font-bold text-primary-900 mb-8 text-center">
+          {sermonData.title}
+        </h1>
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <PortableTextRenderer content={sermonData.content} />
+          </div>
         </div>
       </div>
     </Container>

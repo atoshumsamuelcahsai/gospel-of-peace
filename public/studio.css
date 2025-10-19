@@ -1,0 +1,128 @@
+/* Ultra-Modern Cutting-Edge Sanity Studio Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Ultra-modern font variables */
+:root {
+  --font-family-primary: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-family-secondary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  
+  /* Modern font weights */
+  --font-weight-thin: 100;
+  --font-weight-light: 200;
+  --font-weight-normal: 300;
+  --font-weight-medium: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 600;
+  --font-weight-extrabold: 700;
+  --font-weight-black: 800;
+}
+
+/* Apply ultra-modern fonts to Sanity Studio */
+[data-ui="Card"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+}
+
+[data-ui="Text"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: 1.6 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-ui="Button"] {
+  font-family: var(--font-family-secondary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+}
+
+[data-ui="Field"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+}
+
+[data-ui="Input"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-ui="Textarea"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Ultra-modern headers and titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-secondary) !important;
+  font-weight: var(--font-weight-bold) !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.2 !important;
+}
+
+/* Modern body text */
+body, p, span, div {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Cutting-edge monospace for code */
+code, pre, [data-ui="Code"] {
+  font-family: var(--font-family-mono) !important;
+  font-weight: var(--font-weight-medium) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Ultra-modern navigation */
+[data-ui="Menu"] {
+  font-family: var(--font-family-secondary) !important;
+  font-weight: var(--font-weight-medium) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Modern form labels */
+[data-ui="Label"] {
+  font-family: var(--font-family-secondary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+}
+
+/* Ultra-modern sidebar */
+[data-ui="Sidebar"] {
+  font-family: var(--font-family-secondary) !important;
+  font-weight: var(--font-weight-medium) !important;
+}
+
+/* Modern tooltips */
+[data-ui="Tooltip"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Ultra-modern breadcrumbs */
+[data-ui="Breadcrumbs"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-medium) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Cutting-edge search */
+[data-ui="Search"] {
+  font-family: var(--font-family-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+}
+
+/* Modern tabs */
+[data-ui="Tabs"] {
+  font-family: var(--font-family-secondary) !important;
+  font-weight: var(--font-weight-medium) !important;
+  letter-spacing: -0.02em !important;
+}
