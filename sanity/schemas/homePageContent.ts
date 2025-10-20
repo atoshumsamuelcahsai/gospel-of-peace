@@ -89,7 +89,7 @@ export const homePageContent = defineType({
           name: 'description',
           title: 'Description',
           type: 'text',
-          initialValue: 'Experience authentic worship, powerful teaching, and genuine community. Join us as we discover God\'s purpose together.',
+          initialValue: 'We preach the Gospel of Peace through the power of the Holy Spirit, for salvation is our aim. We invite you to join us as we discover God\'s purpose together.',
           validation: (Rule: any) => Rule.required(),
         },
         {

@@ -56,24 +56,28 @@ export default async function HomePage() {
         </header>
 
         {/* ===== INTRO: text & CTAs BELOW the slider ===== */}
-        <section className="py-12 md:py-16">
+        <section 
+          className="py-12 md:py-16">
           <Container>
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 text-primary-900 mb-6" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-primary-900 mb-6" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
                   <span className="h-2 w-2 rounded-full bg-accent-500" aria-hidden />
                   <span className="text-xs font-semibold tracking-wide">{homePageData.heroSection?.serviceTime || 'Sundays · 11:00 AM'}</span>
                 </div>
 
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-serif text-primary-900 mb-3">
-                  {homePageData.heroSection?.title || 'Gospel of Peace'}
-                </h1>
-                <p className="text-lg md:text-2xl text-primary-900 mb-3 font-medium">
-                  {homePageData.heroSection?.subtitle || 'A Welcoming Community of Faith in Glasgow'}
-                </p>
-                <p className="text-base md:text-lg text-neutral-700 mb-8 leading-relaxed font-medium max-w-xl">
-                  {homePageData.heroSection?.description || 'Experience authentic worship, powerful teaching, and genuine community. Join us as we discover God\'s purpose together.'}
-                </p>
+                  <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-serif text-primary-900 mb-3">
+                    {homePageData.heroSection?.title || 'Gospel of Peace'}
+                  </h1>
+                  <p className="text-lg md:text-2xl text-primary-900 mb-3 font-medium">
+                    {homePageData.heroSection?.subtitle || 'A Welcoming Community of Faith in Glasgow'}
+                  </p>
+                  <p className="text-base md:text-lg text-neutral-700 mb-8 leading-relaxed font-medium max-w-xl">
+                    {homePageData.heroSection?.description || 'Experience authentic worship, powerful teaching, and genuine community. Join us as we discover God\'s purpose together.'}
+                  </p>
+                
+                <p/>
+                <br/>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   {(homePageData.heroSection?.ctaButtons || [
@@ -93,33 +97,16 @@ export default async function HomePage() {
                   ))}
                 </div>
               </div>
-
-              {/* Keep empty for balance or add an image/mini-card later */}
+              
+              {/* Place holder to make semahar happy */}
               <div aria-hidden className="hidden md:block" />
             </div>
           </Container>
         </section>
 
         <main id="main">
-          {/* ===== STATS ===== */}
-          <section className="py-16 bg-white/80">
-            <Container>
-              <ul className="grid grid-cols-2 md:grid-cols-4 gap-8" role="list">
-                {homePageData.statsSection.stats.map((stat: any, i: number) => (
-                  <li key={i} className="text-center modern-card p-6">
-                    <div className="text-4xl mb-3" aria-hidden>
-                      {stat.icon}
-                    </div>
-                    <div className="text-3xl md:text-4xl font-bold text-primary-900 mb-2">{stat.number}</div>
-                    <div className="text-sm text-neutral-600 font-medium">{stat.label}</div>
-                  </li>
-                ))}
-              </ul>
-            </Container>
-          </section>
-
           {/* ===== LIVE STREAM ===== */}
-          <section className="py-24 relative">
+          <section className="py-24 relative" >
             <Container>
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 rounded-full bg-gold-100 text-gold-800 text-sm font-semibold mb-4">
@@ -139,6 +126,7 @@ export default async function HomePage() {
               </div>
             </Container>
           </section>
+
 
           {/* ===== QUICK LINKS ===== */}
           <section className="py-24">
@@ -186,7 +174,15 @@ export default async function HomePage() {
           {/* ===== CTA ===== */}
           <section className="py-24 relative">
             <Container>
-              <div className="max-w-4xl mx-auto text-center modern-card p-10">
+              <div 
+                className="max-w-4xl mx-auto text-center modern-card p-10"
+                style={{
+                  backgroundImage: 'url(aboutus/dove.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif text-primary-900">
                   {homePageData.ctaSection?.title || 'Ready to Take the Next Step?'}
                 </h2>
@@ -223,6 +219,23 @@ export default async function HomePage() {
                   </div>
                 </div>
               </div>
+            </Container>
+          </section>
+
+           {/* ===== STATS ===== */}
+           <section className="py-16 bg-white/80">
+            <Container>
+              <ul className="grid grid-cols-2 md:grid-cols-4 gap-8" role="list">
+                {homePageData.statsSection.stats.map((stat: any, i: number) => (
+                  <li key={i} className="text-center modern-card p-6">
+                    <div className="text-4xl mb-3" aria-hidden>
+                      {stat.icon}
+                    </div>
+                    <div className="text-3xl md:text-4xl font-bold text-primary-900 mb-2">{stat.number}</div>
+                    <div className="text-sm text-neutral-600 font-medium">{stat.label}</div>
+                  </li>
+                ))}
+              </ul>
             </Container>
           </section>
         </main>
