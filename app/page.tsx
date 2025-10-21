@@ -234,7 +234,7 @@ export default async function HomePage() {
               <div 
                 className="max-w-4xl mx-auto text-center modern-card p-10 bg-amber-50"
                 style={{
-                  backgroundImage: 'url(aboutus/dove.png)',
+                  backgroundImage: 'url(aboutus/cross-sem.png)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
