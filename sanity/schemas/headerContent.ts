@@ -49,7 +49,7 @@ export const headerContent = defineType({
           name: 'path',
           title: 'Logo Image Path',
           type: 'string',
-          initialValue: '/hero/logochurch.png',
+          initialValue: '/hero/logochurch.webq',
           description: 'Path to logo image in /public folder',
           validation: (Rule: any) => Rule.required(),
         },

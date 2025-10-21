@@ -35,7 +35,7 @@ function getHeaderFallbackData() {
       subtitle: 'CHURCH GLASGOW'
     },
     logo: {
-      path: '/hero/logochurch.png',
+      path: '/hero/logochurch.webq',
       alt: 'Gospel of Peace Logo'
     },
     navigationLinks: [

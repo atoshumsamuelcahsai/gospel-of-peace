@@ -13,8 +13,8 @@ export default async function HomePage() {
   
   // Ensure we have carousel data, use fallback if missing
   const carouselSlides = homePageData.carouselSection?.slides || [
-    { mobileSrc: '/hero/two.png', desktopSrc: '/hero/two.png', alt: 'Congregation gathering' },
-    { mobileSrc: '/hero/one.png', desktopSrc: '/hero/one.png', alt: 'Worship Service' },
+    { mobileSrc: '/hero/two.png', desktopSrc: '/hero/two.webq', alt: 'Congregation gathering' },
+    { mobileSrc: '/hero/one.png', desktopSrc: '/hero/one.webq', alt: 'Worship Service' },
     // { mobileSrc: '/aboutus/y-1.png', desktopSrc: '/aboutus/y-1.png', alt: 'youth choir 1' },
     // { mobileSrc: '/aboutus/y-2.png', desktopSrc: '/aboutus/y-2.png', alt: 'youth choir 2' },
   ]
@@ -64,7 +64,7 @@ export default async function HomePage() {
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start" >
               <div className="p-6 rounded-lg shadow-lg bg-white animate-fade-in-left animate-delay-100"  style={{
-                  backgroundImage: 'url(aboutus/peace.png)',
+                  backgroundImage: 'url(aboutus/peace.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
@@ -234,7 +234,7 @@ export default async function HomePage() {
               <div 
                 className="max-w-4xl mx-auto text-center modern-card p-10 bg-amber-50"
                 style={{
-                  backgroundImage: 'url(aboutus/cross-sem.png)',
+                  backgroundImage: 'url(aboutus/cross-sem.avif)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
