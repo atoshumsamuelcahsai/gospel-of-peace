@@ -13,8 +13,8 @@ export default async function HomePage() {
   
   // Ensure we have carousel data, use fallback if missing
   const carouselSlides = homePageData.carouselSection?.slides || [
-    { mobileSrc: '/hero/two.png', desktopSrc: '/hero/two.webp', alt: 'Congregation gathering' },
-    { mobileSrc: '/hero/one.png', desktopSrc: '/hero/one.webp', alt: 'Worship Service' },
+    { mobileSrc: '/hero/two.webp', desktopSrc: '/hero/two.webp', alt: 'Congregation gathering' },
+    { mobileSrc: '/hero/one.webp', desktopSrc: '/hero/one.webp', alt: 'Worship Service' },
     // { mobileSrc: '/aboutus/y-1.png', desktopSrc: '/aboutus/y-1.png', alt: 'youth choir 1' },
     // { mobileSrc: '/aboutus/y-2.png', desktopSrc: '/aboutus/y-2.png', alt: 'youth choir 2' },
   ]
