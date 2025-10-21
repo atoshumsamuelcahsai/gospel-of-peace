@@ -51,3 +51,7 @@ Your Sanity schema is already set up in `sanity/schemas/index.ts` with:
 
 Your footer is ready for Sanity CMS! Just complete steps 1-4 above.
 
+picture: converter command avifenc public/aboutus/cross-sem.png  public/aboutus/cross-sem.avif -c aom --min 0 --max 63
+
+cwebp public/aboutus/cross-sem.png -o public/aboutus/cross-sem.webp -q 80
+
