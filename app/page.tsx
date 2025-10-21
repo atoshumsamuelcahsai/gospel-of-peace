@@ -22,6 +22,7 @@ export default async function HomePage() {
   const address = {
     line1: '4 Elibank Street',
     city: 'Glasgow',
+    postcode: 'G33 3QN',
     mapsUrl: 'https://maps.google.com/?q=4+Elibank+Street+Glasgow',
   }
 
@@ -63,12 +64,14 @@ export default async function HomePage() {
           className="py-12 md:py-16 animate-fade-in-up">
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start" >
-              <div className="p-6 rounded-lg shadow-lg bg-white animate-fade-in-left animate-delay-100"  style={{
+              <div className="p-6 rounded-lg shadow-lg bg-white animate-fade-in-left animate-delay-100"  
+              style={{
                   backgroundImage: 'url(aboutus/peace.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
-                }}>
+                }}
+                >
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-primary-900 mb-6 animate-fade-in-up animate-delay-200" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
                   <span className="h-2 w-2 rounded-full bg-accent-500" aria-hidden />
                   <span className="text-xs font-semibold tracking-wide">{homePageData.heroSection?.serviceTime || 'Sundays · 11:00 AM'}</span>
@@ -232,25 +235,31 @@ export default async function HomePage() {
           <section className="py-4 relative animate-fade-in-up">
             <Container>
               <div 
-                className="max-w-4xl mx-auto text-center modern-card p-10 bg-amber-50"
+                className="max-w-4xl mx-auto text-center bg-transparent modern-card p-10 bg-amber-50"
                 style={{
-                  backgroundImage: 'url(aboutus/cross-sem.avif)',
+                  backgroundImage: 'url(aboutus/cross12.avif)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
                 }}
+                
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-5 font-serif" style={{color: '#A0522D'}}>
-                  {homePageData.ctaSection?.title}
-                </h2>
-                <p className="text-xl mb-10 font-bold" style={{color: '#A0522D'}}>
-                  {homePageData.ctaSection?.description}
-                </p>
+                <div className="bg-transparent rounded-xl p-6 mb-8 "
+                
+              >
+                  <h2 className="text-3xl md:text-4xl font-bold mb-5 font-serif" style={{color: 'rgba(0, 78, 78, 0.95)'}}>
+                    {homePageData.ctaSection?.title}
+                  </h2>
+                  <p className="text-1xl md:text-2xl font-bold mb-5 font-serif">
+                    {homePageData.ctaSection?.description}
+                  </p>
+                </div>
                 <div className="grid md:grid-cols-2 gap-6 text-left">
-                  <div className="p-6 rounded-xl bg-white/70" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
+                  <div className="p-6 rounded-xl bg-transparent">
                     <h3 className="text-2xl font-bold mb-3 text-primary-900">Visit Us</h3>
-                    <p className="text-neutral-700 mb-1">{homePageData.ctaSection?.address?.line1 || address.line1}</p>
-                    <p className="text-neutral-700 mb-4">{homePageData.ctaSection?.address?.city || address.city}</p>
+                    <p className="text-neutral-700 mb-4 font-bold">{homePageData.ctaSection?.address?.line1 || address.line1}</p>
+                    <p className="text-neutral-700 mb-4 font-bold">{homePageData.ctaSection?.address?.city || address.city}</p>
+                    <p className="text-neutral-700 mb-4 font-bold">{homePageData.ctaSection?.address?.postcode || address.postcode}</p>
                     <a
                       className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg font-semibold no-underline transition-all hover:opacity-90"
                       style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
@@ -261,11 +270,12 @@ export default async function HomePage() {
                       Get Directions
                     </a>
                   </div>
-                  <div className="p-6 rounded-xl bg-white/70" style={{border: '1px solid rgba(0, 78, 78, 0.3)'}}>
+                  <div className="p-6 rounded-xl bg-transparent" >
                     <h3 className="text-2xl font-bold mb-3 text-primary-900">Connect Online</h3>
-                    <p className="text-neutral-700 mb-4">
+                    <p className="text-neutral-700 mb-6 font-bold">
                       {homePageData.ctaSection?.onlineDescription || 'Join our online community and stay updated with everything happening at Gospel of Peace.'}
                     </p>
+                    <br/>
                     <Link
                       className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg font-semibold no-underline transition-all hover:opacity-90"
                       style={{backgroundColor: 'rgba(0, 78, 78, 0.95)'}}
