@@ -95,10 +95,10 @@ export default async function HomePage() {
                       className={`btn ${button.style === 'primary' ? 'btn-primary' : 'btn-secondary'} group with-icon`}
                     >
                       {button.title}
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
                   ))}
                 </div>
               </div>
@@ -210,24 +210,24 @@ export default async function HomePage() {
                   </Link>
                 </div>
               </div>
-              </Container>
-            </section>
+            </Container>
+          </section>
 
             {/* ===== BIBLE VERSE SCROLLING ===== */}
             <section className="py-4 relative animate-fade-in-up">
-              <Container>
+            <Container>
                 <div className="max-w-5xl mx-auto">
                   <div className="rounded-2xl overflow-hidden shadow-xl flex items-center" style={{backgroundColor: '#1B4D3E', border: '4px solid rgba(0, 78, 78, 0.3)'}}>
-                    <div className="w-full overflow-hidden">
-                      <div className="animate-scroll-left text-lg md:text-xl font-bold text-white whitespace-nowrap">
-                        "Come unto me, all ye that labour and are heavy laden, and I will give you rest." - Matthew 11:28 • "Therefore welcome one another as Christ has welcomed you, for the glory of God." - Romans 15:7 •
+                    <div className="w-full marquee py-3">
+                      <div className="marquee-content text-sm md:text-base font-bold text-white">
+                        "Come unto me, all ye that labour and are heavy laden, and I will give you rest." - Matthew 11:28 &nbsp;&nbsp;•&nbsp;&nbsp; "Therefore welcome one another as Christ has welcomed you, for the glory of God." - Romans 15:7 &nbsp;&nbsp;•&nbsp;&nbsp; "Come unto me, all ye that labour and are heavy laden, and I will give you rest." - Matthew 11:28 &nbsp;&nbsp;•&nbsp;&nbsp; "Therefore welcome one another as Christ has welcomed you, for the glory of God." - Romans 15:7 &nbsp;&nbsp;•&nbsp;&nbsp;
                       </div>
                     </div>
-                  </div>
-                </div>
-              </Container>
-            </section>
-  
+                    </div>
+              </div>
+            </Container>
+          </section>
+
           {/* ===== CTA ===== */}
           <section className="py-4 relative animate-fade-in-up">
             <Container>

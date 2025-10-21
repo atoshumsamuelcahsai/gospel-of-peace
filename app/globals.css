@@ -164,3 +164,31 @@ html, body { height: 100%; }
 .text-overlay {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
+
+/* Simple marquee solution */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Mobile-specific marquee with slower speed to show both verses */
+@media (max-width: 768px) {
+  .marquee-content {
+    animation: marqueeMobile 35s linear infinite;
+  }
+}
+
+@keyframes marqueeMobile {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
